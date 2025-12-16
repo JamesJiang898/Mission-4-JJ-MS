@@ -1,0 +1,72 @@
+.navbar {
+    background-color: #FFDD00;
+}
+
+.navbar-brand {
+    width: 320px;
+}
+
+p {
+font-family: Arial, Helvetica, sans-serif;
+font-size: 20px;
+font-style: normal;
+font-weight: 500;
+line-height: 36px; /* 180% */
+}
+
+#menu-btn {
+    display: flex;
+    width: 110px;
+    height: 39px;
+    padding: 12px 17px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: #FD0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-style: bold;
+    font-weight: 700;
+    line-height: 36px; /* 225% */
+    border-radius: 19px;
+    background: #000;
+    
+}
+
+.btn-primary {
+display: flex;
+width: 110px;
+height: 39px;
+padding: 12px 17px;
+justify-content: center;
+align-items: center;
+gap: 10px;
+color: #ffffff;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 16px;
+font-style: bold;
+font-weight: 700;
+line-height: 36px; /* 225% */
+border-radius: 19px;
+background: #3B82F6;
+}
+
+.btn-secondary {
+    display: flex;
+    width: 110px;
+    height: 39px;
+    padding: 12px 17px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: #3B82F6;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-style: bold;
+    font-weight: 700;
+    line-height: 36px; /* 225% */
+    border-radius: 19px;
+    border: 2px solid #3B82F6;
+    background: #FFF;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
