@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="formpage.js"></script>
     <link rel="stylesheet" href="formpage.css">
 </head>
 <body class="bg-light">
@@ -35,76 +36,89 @@
                 </p>
                 </div>
             <hr class="mb-3"/>
-            <div class="container-fluid">
-                <h1>What can we help you with?</h1>
-                </br>
-                <div>
-                    <!-- radio input for accountType-->
-                    <h2>Please select a service*</h2>
-                    <div class="form-check">
-                        <input type="radio" class="form-check-input" name="seviceType" id="roads" value="roads" required>
-                        <label for="form-check-label" form="roads">Roads, Traffic and Footpaths</label>
-                    </div>
-                    <div class="form-check">
-                        <input type="radio" class="form-check-input" name="seviceType" id="gaffiti" value="gaffiti" required>
-                        <label for="form-check-label" form="gaffiti">Gaffiti/Vandalism</label>
-                    </div>
-                    <div class="form-check">
-                        <input type="radio" class="form-check-input" name="seviceType" id="parking" value="parking" required>
-                        <label for="form-check-label" form="parking">Parking complaint</label>
-                    </div>
-                    <div class="form-check">
-                        <input type="radio" class="form-check-input" name="seviceType" id="water" value="water" required>
-                        <label for="form-check-label" form="water">Water and Drainage</label>
-                    </div>
-                    <div class="form-check">
-                        <input type="radio" class="form-check-input" name="seviceType" id="streetLights" value="streetLights" required>
-                        <label for="form-check-label" form="streetLights">Street lights</label>
-                        <div class="invalid-feedback">Please select a sevice</div>
-                    </div>
-                </div>
-            </div>
-            </br>
-            <!-- Map interface -->
-            <h2>Where is the problem?*</h2>
-            <button type="button" class="btn-geolocation" id="find-me" href="#"><img src="nrk_geo.svg" alt="geolocation symbol">Use my current location</button></span></button>
-            </br>
-            <span>
-                <img src="Basemap image.svg" alt="Map placeholder">
-            </span>
-            </br>
-            <h2>Tell us more about the problem?</h2>
-            <br>
-            <h3>Description</h3>
-            <input type="text" value="Please include as many relevant details as you can">600 characters remaining</input>
-            </br>
-            </br>
-            <h2>Upload photos</h2>
-            </br>
-            <h3>Clear photos that show the location and details of issue help our teams to access and prioritise the work</h3>
-            <img src="Frame 11.png" alt="drag and drop placeholder">
-            </br>
-            <h2>Your details</h2>
-            <h3>Can we contact you about this issue should we need more information?*</h3>
-            <div>
-                <!-- radio input for contact -->
-                <div class="form-check">
-                        <input type="radio" class="form-check-input" name="contactDetails" id="yes" value="yes" required>
-                        <label for="form-check-label" form="yes">Yes</label>
-                    </div>
-                    <div class="form-check">
-                        <input type="radio" class="form-check-input" name="contactDetails" id="no" value="no" required>
-                        <label for="form-check-label" form="no">No</label>
-                        <div class="invalid-feedback">Please select a sevice</div>
-                    </div>
-            </div>
-            <div>
-                <a href="submission.html">
-                <button type="submit" class="btn-primary w-50" href="submission.html">Submit</button>
-                </a>
-            </div>
+        <form class="needs-validation" novalidate id="signupForm">
+    <div class="container-fluid">
+        <h1>What can we help you with?</h1>
         </br>
+        <div class="mb-3">
+            <label class="form-label"><h2>Please select a service*</h2></label>
+            
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="serviceType" id="roads" value="roads" required>
+                <label class="form-check-label" for="roads">Roads, Traffic and Footpaths</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="serviceType" id="graffiti" value="graffiti" required>
+                <label class="form-check-label" for="graffiti">Graffiti/Vandalism</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="serviceType" id="parking" value="parking" required>
+                <label class="form-check-label" for="parking">Parking complaint</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="serviceType" id="water" value="water" required>
+                <label class="form-check-label" for="water">Water and Drainage</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="serviceType" id="streetLights" value="streetLights" required>
+                <label class="form-check-label" for="streetLights">Street lights</label>
+            </div>
+            
+            <div class="invalid-feedback d-block mt-2">
+                Please select a service.
+            </div>
         </div>
+    </div>
+    </br>
+
+    <!-- Map interface -->
+    <h2>Where is the problem?*</h2>
+    <button id="find-me" class="btn btn-outline-primary mb-3">
+    <i class="bi bi-geo-alt"></i> Use my current location
+    </button>
+    <p id="location"></p>
+    <div class="mb-3" id="link-container">
+        <!-- You could add a hidden input for coordinates if needed -->
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label"><h2>Tell us more about the problem?</h2></label>
+        <h3>Description*</h3>
+        <textarea class="form-control" rows="4" maxlength="600" 
+        placeholder="Please include as many relevant details as you can" required></textarea>
+        <div class="invalid-feedback">
+            Please provide a description of the problem.
+        </div>
+        <small class="text-muted">Maximum 600 characters</small>
+    </div>
+
+    <h2>Upload photos <small class="text-muted">(optional)</small></h2>
+    <h3>Clear photos that show the location and details of the issue help our teams assess and prioritise the work</h3>
+    <div class="border border-dashed rounded p-4 text-center mb-4">
+        <img src="Frame 11.png" alt="drag and drop placeholder" class="img-fluid">
+        <!-- You can replace this with an actual file input if needed -->
+    </div>
+
+    <h2>Your details</h2>
+    <h3>Can we contact you about this issue should we need more information?*</h3>
+    <div class="mb-4">
+        <div class="form-check">
+            <input type="radio" class="form-check-input" name="contactDetails" id="yes" value="yes" required>
+            <label class="form-check-label" for="yes">Yes</label>
+        </div>
+        <div class="form-check">
+            <input type="radio" class="form-check-input" name="contactDetails" id="no" value="no" required>
+            <label class="form-check-label" for="no">No</label>
+        </div>
+        <div class="invalid-feedback d-block mt-2">
+            Please let us know if we can contact you.
+        </div>
+    </div>
+
+    <div class="text-center">
+        <button type="submit" class="btn btn-primary btn-lg w-50">Submit</button>
+    </div>
+</form>
 </section>
 </br>
 <!-- Footer -->
