@@ -1,21 +1,43 @@
-// Disable form submissions if there are invalid fields
-(function() {
-'use strict';
-window.addEventListener('load', function() {
-    // Get the forms we want to add validation styles to
-    var forms = document.getElementsByClassName('needs-validation');
-    // Loop over them and prevent submission
-    var validation = Array.prototype.filter.call(forms, function(form) {
-    form.addEventListener('submit', function(event) {
-        if (form.checkValidity() === false) {
-        event.preventDefault();
-        event.stopPropagation();
-        }
-        form.classList.add('was-validated');
-    }, false);
-    });
-}, false);
-})();
+        //finding the form elemment
+        const form = document.getElementById('signupForm')
+        const confirmInput = form.signupConfirm
+        const passwordInput = form.signupPassword
+        const passwordValue = form.signupPassword.value // ""
+        const confirmValue = form.signupConfirm.value // ""
+        const range = document.getElementById("teamSize")
+        const output = document.getElementById("teamSizeOutput")
+
+        range.addEventListener('input', () => {
+            console.log("changing range")
+            output.textContent = range.value
+        })
+
+        // when the form is submitted
+        form.addEventListener('submit', (e) => {
+        const confirmInput = form.signupConfirm
+        const passwordInput = form.signupPassword
+            
+            
+            if (passwordValue !== confirmValue){
+                confirmInput.setCustomValidity("Passwords do not match")
+            } else {
+                confirmInput.setCustomValidity("")
+            }
+            if (!form.checkValidity()){
+                e.preventDefault()
+                e.stopPropagation()
+            }
+            form.classList.add('was-validated')
+        })
+
+        confirmInput.addEventListener("input", () =>{
+            console.log("changing")
+            if(passwordInput.value !== confirmInput.value){
+                confirmInput.setCustomValidity("Passwords do not match")
+            }else {
+                confirmInput.setCustomValidity("")
+            }
+        })
 
 // Report ID generator function
 function generateReportID() {
@@ -34,6 +56,9 @@ function generateReportID() {
     
     return `REP-${timestamp}-${randomPart}`;
 }
+
+const reportId = localStorage.getItem('latestReportId') || 'Not available (try submitting again)';
+    document.getElementById('reportIdDisplay').textContent = reportId;
 
 // Geolocation code (fixed typos: longitude/latitude variables)
 const findMeButton = document.getElementById("find-me");

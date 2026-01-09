@@ -36,13 +36,12 @@
                 </p>
                 </div>
             <hr class="mb-3"/>
-        <form class="needs-validation" novalidate id="signupForm">
-    <div class="container-fluid">
+        <form class="needs-validation" id="signupForm">
+    <div class="mb-3">
         <h1>What can we help you with?</h1>
         </br>
         <div class="mb-3">
             <label class="form-label"><h2>Please select a service*</h2></label>
-            
             <div class="form-check">
                 <input type="radio" class="form-check-input" name="serviceType" id="roads" value="roads" required>
                 <label class="form-check-label" for="roads">Roads, Traffic and Footpaths</label>
@@ -62,11 +61,10 @@
             <div class="form-check">
                 <input type="radio" class="form-check-input" name="serviceType" id="streetLights" value="streetLights" required>
                 <label class="form-check-label" for="streetLights">Street lights</label>
+                <div class="invalid-feedback">
+                Please select a service.</div>
             </div>
             
-            <div class="invalid-feedback d-block mt-2">
-                Please select a service.
-            </div>
         </div>
     </div>
     </br>
@@ -110,14 +108,15 @@
         <div class="form-check">
             <input type="radio" class="form-check-input" name="contactDetails" id="no" value="no" required>
             <label class="form-check-label" for="no">No</label>
-        </div>
-        <div class="invalid-feedback d-block mt-2">
+            <div class="invalid-feedback">
             Please let us know if we can contact you.
+            </div>
         </div>
+        
     </div>
 
     <div class="text-center align-items-center">
-        <input type="submit" value="submit" class="btn-primary btn-lg w-50" src="submission.html">
+        <input type="submit" value="submit" class="btn-primary btn-lg w-50" href="submission.html">
     </div>
 </form>
 </section>
