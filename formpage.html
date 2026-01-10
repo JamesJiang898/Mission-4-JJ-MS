@@ -90,12 +90,17 @@
         </div>
         <small class="text-muted">Maximum 600 characters</small>
     </div>
-
-    <h2>Upload photos <small class="text-muted">(optional)</small></h2>
+<!-- Drag and drop -->
+    <label for="form-label"><h2>Upload photos <small class="text-muted">(optional)</small></h2></label>
     <h3>Clear photos that show the location and details of the issue help our teams assess and prioritise the work</h3>
-    <div class="border border-dashed rounded p-4 text-center mb-4">
-        <img src="Frame 11.png" alt="drag and drop placeholder" class="img-fluid">
-        <!-- You can replace this with an actual file input if needed -->
+    <div class="hero">
+        <label for="input-file" id="drop-area">
+            <input type="file" accept="image/*" id="input-file" hidden>
+            <div id="img-view">
+                <img src="508-icon.png" alt="Upload icon">
+                <p>Drag and drop or click here<br>to upload an image</p>
+            </div>
+        </label>
     </div>
 
     <h2>Your details</h2>
