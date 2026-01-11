@@ -89,12 +89,25 @@ if (findMeButton) {
     });
 }
 
+// Text remaining counter
+const myTextArea = document.getElementById(`my-textarea`);
+const remainingCharsText = document.getElementById(`my-textarea-remaining-chars`);
+const max_Chars = 600;
+
+myTextArea.addEventListener('input',() => {
+    const remaining = max_Chars - myTextArea.value.length;
+    const color = remaining < max_Chars * 0.1 ? 'red' : null;
+
+    remainingCharsText.textContent = `${remaining} characters remaining`;
+    remainingCharsText.style.color = color;
+})
+
 // Drag and drop image interface
 const dropArea = document.getElementById("drop-area");
 const inputFile = document.getElementById("input-file");
 const imgView = document.getElementById("img-view");
 
-inputFile.addEventListener("change", uploadImage)
+inputFile.addEventListener("change", uploadImage);
 
 function uploadImage(){
     let imgLink = URL.createObjectURL(inputFile.files[0]);
