@@ -36,7 +36,7 @@
                 </p>
                 </div>
             <hr class="mb-3"/>
-        <form class="needs-validation" id="signupForm">
+        <form class="needs-validation" id="fixItForm">
     <div class="mb-3">
         <h1>What can we help you with?</h1>
         </br>
@@ -73,9 +73,7 @@
     <div class="mb-3">
     <h2>Where is the problem?*</h2>
     </br>
-    <button id="find-me" class="btn btn-outline-primary mb-3">
-    <i class="bi bi-geo-alt"></i> Use my current location
-    </button>
+    <button id="find-me" class="btn btn-outline-primary mb-3" type="button"><i class="bi bi-geo-alt"></i> Use my current location</button>
     </br>
     <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d11990.863553199022!2d174.78377079999999!3d-41.29328745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2snz!4v1767826902619!5m2!1sen!2snz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </br>
@@ -95,17 +93,22 @@
     <label for="form-label"><h2>Upload photos <small class="text-muted">(optional)</small></h2></label>
     <br>
     <br>
-    <h4>Clear photos that show the location and details of the issue help our teams assess and prioritise the work</h4>
+    <h3>Clear photos that show the location and details of the issue help our teams assess and prioritise the work</h3>
     <div class="hero">
         <label for="input-file" id="drop-area">
             <input type="file" accept="image/*" id="input-file" hidden>
             <div id="img-view">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
                 <img src="508-icon.png" alt="Upload icon">
                 <p>Drag and drop or click here<br>to upload an image</p>
             </div>
         </label>
     </div>
-
+    <br>
     <h2>Your details</h2>
     <h3>Can we contact you about this issue should we need more information?*</h3>
     <div class="mb-4">
@@ -124,7 +127,7 @@
     </div>
 
     <div class="text-center align-items-center">
-        <button type="submit" class="btn-primary btn-lg w-50">Submit</button>
+        <button type="submit" class="btn-primary btn-lg w-50" id="submit-btn">Submit</button>
     </div>
 </form>
 </section>

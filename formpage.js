@@ -1,10 +1,51 @@
-        //finding the form elemment
-        const form = document.getElementById('signupForm')
-        
-        function mySubmitFn() {
-            document.location.href="submission.html"
-        }
+// Get the form
+const form = document.getElementById('fixItForm');
 
+// Prevent default submission + handle validation manually
+form.addEventListener('submit', function(event) {
+    event.preventDefault(); // Always prevent default first
+
+    // Trigger browser validation
+    if (!form.checkValidity()) {
+        // If invalid → show validation messages (browser does this automatically)
+        form.classList.add('was-validated');
+        return; // Stop here — don't redirect
+    }
+
+    // If we get here → form is valid!
+    // You can add extra custom logic here if needed
+
+    // Success → redirect
+    window.location.href = "submission.html";
+});
+
+// Helper function to generate a nice-looking report ID
+function generateReportId() {
+    // Format: FIX-YYYYMMDD-XXXXXX (6 random digits)
+    const now = new Date();
+    const datePart = now.getFullYear().toString() +
+                    String(now.getMonth() + 1).padStart(2, '0') +
+                    String(now.getDate()).padStart(2, '0');
+    
+    const randomPart = Math.floor(100000 + Math.random() * 900000); // 6-digit number
+    
+    return `FIX-${datePart}-${randomPart}`;
+}
+
+form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    if (!form.checkValidity()) {
+        form.classList.add('was-validated');
+        return;
+    }
+
+    // Generate report ID
+    const reportId = generateReportId();
+
+    // Redirect with report ID in URL
+    window.location.href = `submission.html?reportId=${encodeURIComponent(reportId)}`;
+});
 
 // Geolocation code (fixed typos: longitude/latitude variables)
 const findMeButton = document.getElementById("find-me");
@@ -60,6 +101,7 @@ inputFile.addEventListener("change", uploadImage);
 function uploadImage(){
     let imgLink = URL.createObjectURL(inputFile.files[0]);
     imgView.style.backgroundImage = `url(${imgLink})`;
+    imgView.style.backgroundSize = "cover";
     imgView.textContent = "";
     imgView.style.border = 0;
 }
