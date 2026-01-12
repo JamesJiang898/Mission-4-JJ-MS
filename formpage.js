@@ -1,64 +1,10 @@
         //finding the form elemment
         const form = document.getElementById('signupForm')
-        const confirmInput = form.signupConfirm
-        const passwordInput = form.signupPassword
-        const passwordValue = form.signupPassword.value // ""
-        const confirmValue = form.signupConfirm.value // ""
-        const range = document.getElementById("teamSize")
-        const output = document.getElementById("teamSizeOutput")
+        
+        function mySubmitFn() {
+            document.location.href="submission.html"
+        }
 
-        range.addEventListener('input', () => {
-            console.log("changing range")
-            output.textContent = range.value
-        })
-
-        // when the form is submitted
-        form.addEventListener('submit', (e) => {
-        const confirmInput = form.signupConfirm
-        const passwordInput = form.signupPassword
-            
-            
-            if (passwordValue !== confirmValue){
-                confirmInput.setCustomValidity("Passwords do not match")
-            } else {
-                confirmInput.setCustomValidity("")
-            }
-            if (!form.checkValidity()){
-                e.preventDefault()
-                e.stopPropagation()
-            }
-            form.classList.add('was-validated')
-        })
-
-        confirmInput.addEventListener("input", () =>{
-            console.log("changing")
-            if(passwordInput.value !== confirmInput.value){
-                confirmInput.setCustomValidity("Passwords do not match")
-            }else {
-                confirmInput.setCustomValidity("")
-            }
-        })
-
-// Report ID generator function
-function generateReportID() {
-    const now = new Date();
-    const year = now.getFullYear();
-    const month = String(now.getMonth() + 1).padStart(2, '0');
-    const day = String(now.getDate()).padStart(2, '0');
-    const hours = String(now.getHours()).padStart(2, '0');
-    const minutes = String(now.getMinutes()).padStart(2, '0');
-    const seconds = String(now.getSeconds()).padStart(2, '0');
-    
-    const timestamp = `${year}${month}${day}-${hours}${minutes}${seconds}`;
-    
-    // Generate a random 6-character alphanumeric string (uppercase)
-    const randomPart = Math.random().toString(36).substring(2, 8).toUpperCase();
-    
-    return `REP-${timestamp}-${randomPart}`;
-}
-
-const reportId = localStorage.getItem('latestReportId') || 'Not available (try submitting again)';
-    document.getElementById('reportIdDisplay').textContent = reportId;
 
 // Geolocation code (fixed typos: longitude/latitude variables)
 const findMeButton = document.getElementById("find-me");
@@ -90,12 +36,14 @@ if (findMeButton) {
 }
 
 // Text remaining counter
-const myTextArea = document.getElementById(`my-textarea`);
+const myTextArea = document.getElementById(`mytextarea`);
 const remainingCharsText = document.getElementById(`my-textarea-remaining-chars`);
 const max_Chars = 600;
 
 myTextArea.addEventListener('input',() => {
     const remaining = max_Chars - myTextArea.value.length;
+    console.log(myTextArea.value.length);
+    
     const color = remaining < max_Chars * 0.1 ? 'red' : null;
 
     remainingCharsText.textContent = `${remaining} characters remaining`;
