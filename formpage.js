@@ -83,8 +83,7 @@ const max_Chars = 600;
 
 myTextArea.addEventListener('input',() => {
     const remaining = max_Chars - myTextArea.value.length;
-    console.log(myTextArea.value.length);
-    
+    // console.log(myTextArea.value.length);
     const color = remaining < max_Chars * 0.1 ? 'red' : null;
 
     remainingCharsText.textContent = `${remaining} characters remaining`;

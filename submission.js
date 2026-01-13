@@ -8,3 +8,8 @@
     } else {
         document.getElementById('reportIdDisplay').textContent = 'Not available';
     }
+
+// Return to homepage button
+    function returnToHome() {
+        window.location.href = `welcome.html`;
+    }
