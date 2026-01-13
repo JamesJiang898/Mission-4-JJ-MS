@@ -1,0 +1,271 @@
+/* ================================
+   PAGE LAYOUT
+================================ */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main content pushes footer down */
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5;
+  padding: 40px 20px;
+}
+
+/* ================================
+   NAVBAR
+================================ */
+.navbar {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  background-color: #ffd900;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.MainLogo img {
+  max-height: 120px;      /* adjust to fit navbar */
+  width: auto;
+  display: block;
+}
+
+.MiddleLogo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Logo image */
+.MiddleLogo img {
+  max-height: 120px;   /* adjust if needed */
+  width: auto;
+  display: block;
+}
+
+/* MENU BUTTON */
+.menu-button {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: #000000;
+  border: 2px solid #333;
+  padding: 10px 25px;
+  border-radius: 999px;
+  font-size: 18px;
+  color: #ffd900; 
+  cursor: pointer;
+}
+
+.menu-icon .bar {
+  width: 25px;
+  height: 3px;
+  background: #ffd900;
+  margin: 4px 0;
+}
+
+/* ================================
+   REGISTER / LOGIN FORM
+================================ */
+.signupform {
+  width: 100%;
+  max-width: 400px;
+}
+
+.register-form {
+  background: #ffffff;
+  padding: 30px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.register-form h2 {
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.register-form p {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #666;
+}
+
+.register-form label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.register-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.form-message {
+  font-size: 14px;
+  margin-top: -10px;
+  margin-bottom: 16px;
+}
+
+.form-message.error {
+  color: #c62828;
+}
+
+.form-message.success {
+  color: #2e7d32;
+}
+
+:focus {
+  outline: 3px solid #3188da;
+  outline-offset: 2px;
+}
+
+/* Buttons */
+.form-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.form-actions button {
+  flex: 1;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  background-color: #f2f2f2;      /* light grey */
+  color: #333;                    /* dark text */
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.cancel-btn:hover {
+  background-color: rgba(49, 136, 218, 0.1);
+}
+
+.register-btn {
+  background-color: #3188da;
+  color: #fff;
+}
+
+.register-btn:hover {
+  opacity: 0.9; 
+}
+
+/* ================================
+   FOOTER (STICKS TO BOTTOM)
+================================ */
+.footer {
+  background-color: #111;
+  color: #fff;
+  padding: 40px 20px 20px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer h4 {
+  margin-bottom: 15px;
+}
+
+.footer-heading {
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #bbb;
+}
+
+.footer-link {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  margin-bottom: 6px;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+.footer-text {
+  color: #ccc;
+}
+
+/* Newsletter */
+.newsletter-form {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 8px;
+  border-radius: 4px;
+  border: none;
+}
+
+.newsletter-form button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  background: #fff;
+  cursor: pointer;
+}
+
+/* Footer bottom */
+.footer-bottom {
+  border-top: 1px solid #333;
+  margin-top: 30px;
+  padding-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+.footer-bottom-socials a {
+  color: #fff;
+  margin-right: 12px;
+  font-size: 18px;
+}
