@@ -13,12 +13,19 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
   >
+
+
+
+
 </head>
 
 <body>
 
-  <!-- Skip link for accessibility -->
+  
+  <!-- Skip link for accessibility: lets users quickly jump to main content -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  
 
   <div class="page-wrapper">
 
@@ -32,14 +39,16 @@
         <img src="FIXiT-logo.png" alt="FIXiT reporting service logo">
       </div>
 
-      <button class="menu-button" aria-label="Open menu" aria-expanded="false">
-        <span class="menu-text">Menu</span>
-        <div class="menu-icon">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </div>
-      </button>
+          
+    <!-- Menu Button -->
+        <button class="menu-button">
+            <span class="menu-text">Menu</span>
+            <div class="menu-icon">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </button>
     </nav>
 
     <!-- ================= MAIN CONTENT ================= -->
@@ -47,8 +56,11 @@
 
       <!-- LEFT: LOGIN -->
       <section class="left-section">
+
+          <!-- Form wrapper -->
         <form class="login-form" autocomplete="on">
 
+             <!-- Email input -->
           <div class="form-group">
             <label for="email">Email</label>
             <input
@@ -59,43 +71,48 @@
               placeholder="Email"
             >
           </div>
-
+  <!-- Password input -->
           <div class="form-group">
             <label for="password">Password</label>
 
-            <div class="password-wrapper">
-              <input
-                type="password"
-                id="password"
-                name="password"
-                required
-                placeholder="Password"
-              >
 
-              <span
-                class="password-toggle"
-                role="button"
-                tabindex="0"
-                aria-label="Show password"
-              >
-                👁️
-              </span>
-            </div>
-          </div>
+<div class="password-wrapper">
+  <input
+    type="password" 
+    id="password"
+    name="password"
+    required
+    placeholder="Password"
+  >
+  <!-- Font Awesome eye-slash icon -->
+  <span
+    class="password-toggle"
+    role="button"
+    tabindex="0"
+    aria-label="Show password"
+  >
+    <i class="fa-solid fa-eye-slash"></i>
+  </span>
+</div>
 
+
+       <!-- Link to registration page -->
           <p class="register-msg">
             Don’t have an account?
             <a href="register.html">Register here</a>
           </p>
 
-          <button type="submit" class="login-btn">Login</button>
+                    <!-- Login button -->
+
+    <a href="Welcome.html" class="login-btn">Login</a>
 
         </form>
       </section>
 
+        <!-- Divider between left and right section -->
       <div class="divider"></div>
 
-      <!-- RIGHT: GUEST -->
+        <!-- RIGHT SIDE: Guest login -->
       <section class="right-section">
         <p>Prefer not to register? Click below to continue as a guest.</p>
         <button class="guest-button">Continue as Guest</button>
@@ -103,7 +120,7 @@
 
     </main>
 
-    <!-- ================= FOOTER ================= -->
+
      <!-- ================= FOOTER ================= -->
     <footer class="footer">
         <div class="footer-container">
@@ -133,7 +150,7 @@
                 </div>
             </div>
 
-            <!-- Visit -->
+            <!-- Visit info -->
             <div class="footer-center">
                 <h4>Visit Us</h4>
 
@@ -153,7 +170,7 @@
                 </div>
             </div>
 
-            <!-- Links -->
+               <!-- Quick links -->
             <div class="footer-right">
                 <h4>Quick Links</h4>
 
@@ -192,6 +209,7 @@
     </footer>
   </div>
 
- 
+    <!-- Link to external JavaScript -->
+ <script src="login.js"></script>
 </body>
 </html>
