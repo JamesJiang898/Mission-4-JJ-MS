@@ -26,7 +26,16 @@ loginForm.addEventListener('submit', (e) => {
   window.location.href = 'Welcome.html';
 });
 
+// Select the guest button
+const guestButton = document.querySelector(".guest-button");
 
+// Add click event
+if (guestButton) {
+    guestButton.addEventListener("click", () => {
+        // Redirect to formpage.html
+        window.location.href = "formpage.html";
+    });
+}
 
 
   

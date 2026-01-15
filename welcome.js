@@ -33,7 +33,7 @@ document.querySelectorAll(".view-report").forEach(link => {
     dateEl.textContent = card.dataset.date;
     teamEl.textContent = card.dataset.team;
 
-    modal.style.display = "block";     // Show the modal
+   modal.style.display = "flex";     // Show the modal
     modal.setAttribute("aria-hidden", "false");   // Update accessibility attribute
   });
 });
