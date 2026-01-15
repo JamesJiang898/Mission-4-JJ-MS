@@ -1,11 +1,16 @@
 /* ================================
-PAGE LAYOUT
+   PAGE LAYOUT
 ================================ */
 html, body {
   margin: 0;
   padding: 0;
   height: 100%;
   font-family: Arial, sans-serif;
+}
+
+/* Box-sizing reset */
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
 .page-wrapper {
@@ -19,7 +24,6 @@ html, body {
   outline-offset: 2px;
 }
 
-
 /* Main content pushes footer down */
 main {
   flex: 1;
@@ -30,7 +34,7 @@ main {
   padding: 40px 20px;
 }
 
-
+/* Skip link for accessibility */
 .skip-link {
   position: absolute;
   top: -40px;
@@ -112,8 +116,8 @@ main {
 ================================ */
 .page-container {
   display: flex;
-  justify-content: center;   /* centers horizontally */
-  align-items: center;       /* centers vertically */
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   min-height: calc(100vh - 150px);
   background-color: #f9f9f9;
@@ -156,19 +160,21 @@ main {
 }
 
 /* Login button */
-.login-form button {
-  font-size: 16px;
-  padding: 12px;
-  background: #3188da;
-  color: #fff;
+.login-btn {
+  background-color: #007bff;
+  color: white;
   border: none;
-  border-radius: 6px;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 8px;
   cursor: pointer;
-  width: 100%;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
 }
 
-.login-form button:hover {
-    opacity: 0.9;
+.login-btn:hover {
+  background-color: #0056b3;
 }
 
 /* Register message */
@@ -182,7 +188,36 @@ main {
   color: #007bff;
 }
 
+/* Form groups must stretch full width */
+.form-group {
+  width: 100%;
+}
 
+/* Password wrapper */
+.password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.password-wrapper input {
+  width: 100%;
+  padding-right: 40px;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  user-select: none;
+}
+
+.password-toggle:focus {
+  outline: 3px solid #3188da;
+  outline-offset: 2px;
+}
 
 /* Divider */
 .divider {
@@ -208,31 +243,28 @@ main {
 .guest-button {
   font-size: 16px;
   padding: 12px;
-    border: none;
-  background: #3188da;
+  border: none;
+  background: #007bff;
   color: #fff;
   border-radius: 6px;
   cursor: pointer;
   margin-top: 40px;
   width: 100%;
   max-width: 350px;
+ 
 }
 
 .guest-button:hover {
-    opacity: 0.9; 
+  opacity: 0.9; 
+    background-color: #0056b3;
 }
-
-
-
-
-
 
 /* ================================
    FOOTER
 ================================ */
 .footer {
   background-color: #111;
-  color: #fff;
+  color: #ffffff; /* default text = white */
   padding: 40px 20px 20px;
 }
 
@@ -251,29 +283,40 @@ main {
   min-width: 250px;
 }
 
+/* MAIN SECTION HEADINGS (Contact Us, Visit Us, Quick Links) */
 .footer h4 {
   margin-bottom: 15px;
+  color: #fff;         /* ACCENT COLOUR */
+  font-size: 18px;
+  font-weight: 700;
 }
 
+/* SUB-HEADINGS (Email Us, Phone Us, etc.) */
 .footer-heading {
   font-size: 14px;
   margin-bottom: 5px;
-  color: #bbb;
+  color: #bbb;        /* SAME ACCENT */
+  font-weight: 600;
 }
 
+/* LINKS */
 .footer-link {
   display: block;
-  color: #fff;
+  color: #ffffff;          /* WHITE TEXT */
   text-decoration: none;
   margin-bottom: 6px;
+  font-size: 14px;
 }
 
 .footer-link:hover {
   text-decoration: underline;
+  opacity: 0.85;
 }
 
+/* PLAIN TEXT */
 .footer-text {
-  color: #ccc;
+  color: #ffffff;          /* WHITE TEXT */
+  font-size: 14px;
 }
 
 /* Newsletter */
@@ -294,7 +337,9 @@ main {
   padding: 8px 12px;
   border: none;
   border-radius: 4px;
-  background: #fff;
+  background: #ffd900;
+  color: #000;
+  font-weight: 600;
   cursor: pointer;
 }
 
@@ -308,76 +353,83 @@ main {
   justify-content: space-between;
   align-items: center;
   font-size: 14px;
+  color: #cccccc;          /* MUTED */
 }
 
 .footer-bottom-socials a {
-  color: #fff;
+  color: #ffffff;
   margin-right: 12px;
   font-size: 18px;
 }
 
+.footer-bottom-socials a:hover {
+  color: #ffd900;
+}
+
 /* ================================
-   RESPONSIVE
+   MEDIA QUERIES FOR RESPONSIVENESS
 ================================ */
-@media (max-width: 1024px) {
-  .page-container {
+
+/* Tablet screens: 768px and below */
+@media screen and (max-width: 768px) {
+  .navbar {
     flex-direction: column;
+    height: auto;
     align-items: center;
+    padding: 20px 10px;
+    text-align: center;
   }
 
-  .left-section,
-  .right-section {
-    flex: 1 1 100%;
-    max-width: 450px;
-  }
-}
-
-/* ================================
-   TABLET
-================================ */
-@media (max-width: 768px) {
-  .login-container {
-    padding: 30px;
+  .MiddleLogo {
+    position: static;
+    transform: none;
+    margin: 10px 0 20px 0;
   }
 
-  .login-form {
-    max-width: 90%;
+  .signupform {
+    max-width: 100%;
   }
-}
 
-/* ================================
-   DESKTOP
-================================ */
-@media (min-width: 1024px) {
-  .login-form {
-    max-width: 420px;
+  main {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
   }
 }
 
-/* ================================
-   PASSWORD TOGGLE ICON
-================================ */
-.password-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-  width: 100%;   
-}
+/* Mobile screens: 600px and below */
+@media screen and (max-width: 600px) {
+  .navbar {
+    font-size: 12px;
+  }
 
-.password-wrapper input {
-  width: 100%;
-  padding-right: 40px;
-}
+  .register-form input,
+  .register-form label,
+  .form-actions button {
+    font-size: 14px;
+    padding: 10px;
+  }
 
-.password-toggle {
-  position: absolute;
-  right: 10px;
-  cursor: pointer;
-  font-size: 1.2rem;
-  user-select: none;
-}
+  .footer-container {
+    flex-direction: column;
+    gap: 15px;
+  }
 
-.password-toggle:focus {
-  outline: 3px solid #3188da;
-  outline-offset: 2px;
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .footer {
+    padding: 20px 10px;
+  }
+
+  .MiddleLogo {
+    margin-bottom: 15px;
+  }
+
+  main {
+    padding: 15px;
+  }
 }
