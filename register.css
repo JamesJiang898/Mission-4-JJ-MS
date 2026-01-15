@@ -269,3 +269,71 @@ main {
   margin-right: 12px;
   font-size: 18px;
 }
+
+/* ================================
+   MEDIA QUERIES FOR RESPONSIVENESS
+================================ */
+
+/* Tablet screens: 768px and below */
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+    padding: 20px 10px;
+    text-align: center;
+  }
+
+  .MiddleLogo {
+    position: static;
+    transform: none;
+    margin: 10px 0 20px 0;
+  }
+
+  .signupform {
+    max-width: 100%;
+  }
+
+  main {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+}
+
+/* Mobile screens: 600px and below */
+@media screen and (max-width: 600px) {
+  .navbar {
+    font-size: 12px;
+  }
+
+  .signupform input,
+  .signupform label,
+  .form-actions button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .footer {
+    padding: 20px 10px;
+  }
+
+  .MiddleLogo {
+    margin-bottom: 15px;
+  }
+
+  main {
+    padding: 15px;
+  }
+}

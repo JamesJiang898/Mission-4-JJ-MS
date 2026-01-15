@@ -161,7 +161,7 @@ main {
   color: #000;
 }
 
-./* ================================
+/* ================================
    MODAL (View Report)
 ================================ */
 .modal {
@@ -340,4 +340,65 @@ main {
   color: #fff;
   margin-right: 12px;
   font-size: 18px;
+}
+
+/* ================================
+   MEDIA QUERIES FOR RESPONSIVENESS
+================================ */
+
+/* Tablet screens: 768px and below */
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+    padding: 20px 10px;
+    text-align: center;
+  }
+
+  .MiddleLogo {
+    position: static;
+    transform: none;
+    margin: 10px 0 20px 0;
+  }
+
+  .report-cards {
+    grid-template-columns: 1fr;
+  }
+
+  main {
+    padding: 20px;
+  }
+}
+
+/* Mobile screens: 600px and below */
+@media screen and (max-width: 600px) {
+  .navbar {
+    font-size: 12px;
+  }
+
+  .report-btn {
+    width: 100%;
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .report-card {
+    padding: 15px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  main {
+    padding: 15px;
+  }
 }

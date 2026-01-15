@@ -1,3 +1,16 @@
+document.addEventListener("DOMContentLoaded", () => {
+    const savedEmail = localStorage.getItem("fixitUserEmail");
+    if (savedEmail) {
+        emailInput.value = savedEmail;
+    }
+});
+
+
+
+
+
+
+
 // ================================
 // MENU TOGGLE
 // ================================
@@ -22,50 +35,29 @@ if (reportBtn) {
   });
 }
 
-// ================================
-// VIEW REPORT MODAL
-// ================================
-const viewReportLinks = document.querySelectorAll(".view-report");
-const modal = document.querySelector(".modal");
-const modalContent = document.querySelector(".modal-content");
-const closeModalBtn = document.querySelector(".close-modal");
 
-// Open modal and populate content
-viewReportLinks.forEach(link => {
-  link.addEventListener("click", (e) => {
-    e.preventDefault();
 
-    const reportCard = link.closest(".report-card");
-    if (!reportCard) return;
+// Select the cancel button
+const cancelBtn = document.querySelector(".cancel-btn");
 
-    const type = reportCard.querySelector(".report-type").textContent;
-    const status = reportCard.querySelector(".report-status").textContent;
-    const description = reportCard.querySelector(".report-description").textContent;
-    const location = reportCard.querySelector(".report-meta span:first-child").textContent;
-    const date = reportCard.querySelector(".report-meta span:last-child").textContent;
-
-    if (modal) {
-      modal.querySelector("h3").textContent = type;
-      modal.querySelector(".modal-status").textContent = status;
-      modal.querySelector(".modal-description").textContent = description;
-      modal.querySelector(".modal-location").textContent = location;
-      modal.querySelector(".modal-date").textContent = date;
-
-      modal.style.display = "flex"; // show modal
-    }
-  });
+// Redirect to login.html when clicked
+cancelBtn.addEventListener("click", () => {
+    window.location.href = "login.html";
 });
 
-// Close modal
-if (closeModalBtn && modal) {
-  closeModalBtn.addEventListener("click", () => {
-    modal.style.display = "none";
-  });
 
-  // Close modal on clicking outside content
-  window.addEventListener("click", (e) => {
-    if (e.target === modal) {
-      modal.style.display = "none";
-    }
-  });
-}
+const registerForm = document.querySelector(".register-form");
+const emailInput = document.getElementById("email");
+
+registerForm.addEventListener("submit", (e) => {
+    e.preventDefault(); // prevent actual form submission
+
+    // Save email to localStorage
+    localStorage.setItem("fixitUserEmail", emailInput.value);
+
+    // Optionally, show a success message
+    alert("Registration successful! Your email has been saved locally.");
+
+    // Redirect to login page
+    window.location.href = "login.html";
+});
