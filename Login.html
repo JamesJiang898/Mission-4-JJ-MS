@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FIXiT – Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="login.css">
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  >
+</head>
+
+<body>
+
+  <!-- Skip link for accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <div class="page-wrapper">
+
+    <!-- ================= NAVBAR ================= -->
+    <nav class="navbar">
+      <div class="MainLogo">
+        <img src="WCC-Logo-Black-Web.png" alt="Wellington City Council logo">
+      </div>
+
+      <div class="MiddleLogo">
+        <img src="FIXiT-logo.png" alt="FIXiT reporting service logo">
+      </div>
+
+      <button class="menu-button" aria-label="Open menu" aria-expanded="false">
+        <span class="menu-text">Menu</span>
+        <div class="menu-icon">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </button>
+    </nav>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main id="main-content" class="page-container">
+
+      <!-- LEFT: LOGIN -->
+      <section class="left-section">
+        <form class="login-form" autocomplete="on">
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="Email"
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+
+            <div class="password-wrapper">
+              <input
+                type="password"
+                id="password"
+                name="password"
+                required
+                placeholder="Password"
+              >
+
+              <span
+                class="password-toggle"
+                role="button"
+                tabindex="0"
+                aria-label="Show password"
+              >
+                👁️
+              </span>
+            </div>
+          </div>
+
+          <p class="register-msg">
+            Don’t have an account?
+            <a href="register.html">Register here</a>
+          </p>
+
+          <button type="submit" class="login-btn">Login</button>
+
+        </form>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- RIGHT: GUEST -->
+      <section class="right-section">
+        <p>Prefer not to register? Click below to continue as a guest.</p>
+        <button class="guest-button">Continue as Guest</button>
+      </section>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+     <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="footer-container">
+
+            <!-- Contact -->
+            <div class="footer-left">
+                <h4>Contact Us</h4>
+
+                <div class="footer-section">
+                    <h5 class="footer-heading">Report a Problem or Make a Request</h5>
+                    <a href="mailto:noisecontrol@wcc.govt.nz" class="footer-link">Contact Noise Control</a>
+                </div>
+
+                <div class="footer-section">
+                    <h5 class="footer-heading">Email Us</h5>
+                    <a href="mailto:info@wcc.govt.nz" class="footer-link">info@wcc.govt.nz</a>
+                </div>
+
+                <div class="footer-section">
+                    <h5 class="footer-heading">Phone Us</h5>
+                    <span class="footer-text">04 499 4444</span>
+                </div>
+
+                <div class="footer-section">
+                    <h5 class="footer-heading">Send Us Mail</h5>
+                    <span class="footer-text">PO BOX 2199<br>Wellington 6140</span>
+                </div>
+            </div>
+
+            <!-- Visit -->
+            <div class="footer-center">
+                <h4>Visit Us</h4>
+
+                <div class="footer-section">
+                    <h5 class="footer-heading">Council Service Desks</h5>
+                    <a href="#" class="footer-link">Service Desk Locations</a>
+                </div>
+
+                <div class="footer-section">
+                    <h5 class="footer-heading">Head Office</h5>
+                    <a href="#" class="footer-link">133 The Terrace, Wellington Central</a>
+                </div>
+
+                <div class="footer-section">
+                    <h5 class="footer-heading">Office Hours</h5>
+                    <span class="footer-text">Mon–Fri 8:30am – 5:00pm</span>
+                </div>
+            </div>
+
+            <!-- Links -->
+            <div class="footer-right">
+                <h4>Quick Links</h4>
+
+                <div class="footer-section">
+                    <a href="#" class="footer-link">Home</a>
+                    <a href="#" class="footer-link">Services</a>
+                    <a href="#" class="footer-link">Report an Issue</a>
+                    <a href="#" class="footer-link">FAQs</a>
+                    <a href="#" class="footer-link">Privacy Policy</a>
+                </div>
+
+                <div class="footer-section">
+                    <h5 class="footer-heading">Stay Updated</h5>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="footer-bottom-socials">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+
+            <div class="footer-bottom-legal">
+                © 2025 Wellington Council | Privacy Policy | Terms & Conditions
+            </div>
+        </div>
+    </footer>
+  </div>
+
+ 
+</body>
+</html>
